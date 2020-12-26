@@ -57,11 +57,11 @@ public class QueryUtils {
 
                 String countryName = currentCountry.getString("country");
 
-                int todayCases = currentCountry.optInt("todayCases",-1);
+                int todayCases = currentCountry.getInt("todayCases");
 
-                int todayDeaths = currentCountry.optInt("todayDeaths",-1);
+                int todayDeaths = currentCountry.getInt("todayDeaths");
 
-                int active = currentCountry.optInt("active",-1);
+                int active = currentCountry.getInt("active");
 
                 CoronaData coronaData = new CoronaData(countryName, todayCases, todayDeaths, active);
 

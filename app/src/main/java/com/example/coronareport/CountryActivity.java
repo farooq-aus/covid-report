@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
+import android.graphics.Paint;
 import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -15,9 +16,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -33,6 +39,13 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
     private LinearLayout countryInfo;
 
+    GraphView gw;
+    LineGraphSeries<DataPoint> caseSeries;
+    LineGraphSeries<DataPoint> deathSeries;
+    LineGraphSeries<DataPoint> recoverySeries;
+
+    RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +58,6 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         android.app.LoaderManager loaderManager = getLoaderManager();
         loaderManager.initLoader(COUNTRY_LOADER_ID, bundle, this);
 
-        getCountryData();
-
         ImageView closeBtn = (ImageView) findViewById(R.id.close);
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +65,33 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
                 finish();
             }
         });
+
+        getCountryData();
+
+        final TextView trendText = (TextView) findViewById(R.id.trendlinetext);
+
+        radioGroup = (RadioGroup) findViewById(R.id.rg);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                gw.removeAllSeries();
+                switch(i){
+                    case R.id.rb2:
+                        gw.addSeries(deathSeries);
+                        trendText.setTextColor(getResources().getColor(R.color.colorDeathTrend));
+                        break;
+                    case R.id.rb3:
+                        gw.addSeries(recoverySeries);
+                        trendText.setTextColor(getResources().getColor(R.color.colorRecoveredTrend));
+                        break;
+                    default:
+                        gw.addSeries(caseSeries);
+                        trendText.setTextColor(getResources().getColor(R.color.colorAccent));
+                        break;
+                }
+            }
+        });
+
     }
 
     private void getCountryData() {
@@ -76,14 +114,17 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         StringBuilder builder = new StringBuilder("https://disease.sh/v3/covid-19/countries/");
         builder.append(bundle.getString("COUNTRY_NAME"));
         builder.append("?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true");
-        return new CountryLoader(this, builder.toString());
+        StringBuilder builder2 = new StringBuilder("https://disease.sh/v3/covid-19/historical/");
+        builder2.append(bundle.getString("COUNTRY_NAME"));
+        builder2.append("?lastdays=15");
+        return new CountryLoader(this, builder.toString(), builder2.toString());
     }
 
     @Override
     public void onLoadFinished(Loader<CountryData> loader, CountryData countryData) {
         final View loadingIndicator = findViewById(R.id.progress);
 
-        ImageView iw = (ImageView) findViewById(R.id.flag) ;
+        ImageView iw = (ImageView) findViewById(R.id.flag);
         Picasso.get()
                 .load(countryData.flagSrc)
                 .into(iw, new com.squareup.picasso.Callback(){
@@ -95,9 +136,57 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
                     @Override
                     public void onError(Exception e) {
-
+                        Log.e(LOG_TAG, "Problem loading Flag");
                     }
                 });
+
+        gw = (GraphView) findViewById(R.id.graph);
+        gw.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+
+        try {
+            DataPoint[] caseDataPoints = new DataPoint[countryData.casesTrend.size()];
+            DataPoint[] deathDataPoints = new DataPoint[countryData.casesTrend.size()];
+            DataPoint[] recoveryDataPoints = new DataPoint[countryData.casesTrend.size()];
+
+            for(int i = 0; i < countryData.casesTrend.size(); i++) {
+                caseDataPoints[i] = new DataPoint(i, countryData.casesTrend.get(i));
+                deathDataPoints[i] = new DataPoint(i, countryData.deathsTrend.get(i));
+                recoveryDataPoints[i] = new DataPoint(i, countryData.recoveriesTrend.get(i));
+            }
+
+            caseSeries = new LineGraphSeries<>(caseDataPoints);
+            deathSeries = new LineGraphSeries<>(deathDataPoints);
+            recoverySeries = new LineGraphSeries<>(recoveryDataPoints);
+
+            Paint paint = new Paint();
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setColor(getResources().getColor(R.color.colorAccent));
+            caseSeries.setCustomPaint(paint);
+
+
+            Paint paint2 = new Paint();
+            paint2.setStyle(Paint.Style.STROKE);
+            paint2.setColor(getResources().getColor(R.color.colorDeathTrend));
+            deathSeries.setCustomPaint(paint2);
+
+            Paint paint3 = new Paint();
+            paint3.setStyle(Paint.Style.STROKE);
+            paint3.setColor(getResources().getColor(R.color.colorRecoveredTrend));
+            recoverySeries.setCustomPaint(paint3);
+
+            caseSeries.setDataPointsRadius(10);
+            deathSeries.setDataPointsRadius(10);
+            recoverySeries.setDataPointsRadius(10);
+
+            caseSeries.setDrawDataPoints(true);
+            deathSeries.setDrawDataPoints(true);
+            recoverySeries.setDrawDataPoints(true);
+
+            gw.addSeries(caseSeries);
+
+        } catch (IllegalArgumentException e) {
+            Log.e(LOG_TAG, "Problem setting trend data.");
+        }
 
         setTexts(countryData);
     }
@@ -105,21 +194,6 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
     @Override
     public void onLoaderReset(Loader<CountryData> loader) {
 
-    }
-
-    public static CountryData fetchCountryData(String requestUrl) {
-        URL url = CountryQueryUtils.createUrl(requestUrl);
-
-        String jsonResponse = null;
-        try {
-            jsonResponse = CountryQueryUtils.makeHttpRequest(url);
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem making the HTTP request.", e);
-        }
-
-        CountryData coronaData = CountryQueryUtils.extractFeatureFromJson(jsonResponse);
-
-        return coronaData;
     }
 
     private void setTexts(CountryData countryData) {
@@ -149,15 +223,6 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
         TextView tw9 = (TextView) findViewById(R.id.ctests);
         CoronaAdapter.setText(tw9, countryData.totalTests);
-
-        TextView tw10 = (TextView) findViewById(R.id.ccasespermil);
-        CoronaAdapter.setText(tw10, countryData.casesPerMillion);
-
-        TextView tw11 = (TextView) findViewById(R.id.cdeathspermil);
-        CoronaAdapter.setText(tw11, countryData.deathsPerMillion);
-
-        TextView tw12 = (TextView) findViewById(R.id.ctestspermil);
-        CoronaAdapter.setText(tw12, countryData.testsPerMillion);
 
     }
 

@@ -113,7 +113,7 @@ public class CoronaAdapter extends ArrayAdapter<CoronaData> implements Filterabl
     public static void setText(TextView tw, int count)
     {
         if(count == -1)
-            tw.setText(R.string.dash);
+            tw.setText(R.string.not_known);
         else
             tw.setText(NumberFormat.getNumberInstance(Locale.US).format(count));
     }

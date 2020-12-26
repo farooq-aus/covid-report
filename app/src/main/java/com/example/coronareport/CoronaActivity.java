@@ -31,7 +31,7 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
     private CoronaAdapter coronaAdapter;
 
     public static final String COVID_REQUEST_URL =
-            "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=true";
+            "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=false";
 
     private ImageView emptyView;
 
