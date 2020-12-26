@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Covid Report</string>
+    <string name="deaths">Deaths</string>
+    <string name="cases">Cases</string>
+    <string name="recovered">Recovered</string>
+    <string name="no_connection">No Internet Connection.</string>
+    <string name="not_known">Not Known</string>
+    <string name="totalcases">Total Cases</string>
+    <string name="totaldeaths">Total Deaths</string>
+    <string name="casestoday">Cases Today</string>
+    <string name="deathstoday">Deaths Today</string>
+    <string name="active">Active Cases</string>
+    <string name="totalrecovered">Recoveries</string>
+    <string name="criticalcases">Critical Cases</string>
+    <string name="tests">Total Tests Conducted</string>
+    <string name="casespermil">Cases Per One Million</string>
+    <string name="deathspermil">Deaths Per One Million</string>
+    <string name="testspermil">Tests Per One Million</string>
+    <string name="search">Search Countries</string>
+    <string name="today">\@today</string>
+    <string name="not_found">No search results</string>
+    <string name="dash">-</string>
+</resources>

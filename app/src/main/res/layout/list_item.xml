@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/item_background"
+    >
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="USA"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        android:layout_gravity="center_vertical"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cases"
+                android:textColor="@color/colorDefaultText"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/casesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="134,890"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/deaths"
+                android:textColor="@color/colorDefaultText"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/deathCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="3,289"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="end"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/active"
+                android:textColor="@color/colorDefaultText"
+                android:textSize="20sp"
+                android:layout_gravity="end"
+                />
+
+            <TextView
+                android:id="@+id/activeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="70,593"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_gravity="end"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

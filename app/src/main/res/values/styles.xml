@@ -1,0 +1,29 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="AppTheme.ActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="titleTextStyle">@style/AppTheme.ActionBarStyle.TitleTextStyle</item>
+        <item name="background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.ActionBarStyle.TitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:letterSpacing">-0.1</item>
+        <item name="android:textSize">32dp</item>
+    </style>
+
+    <style name="RoundCornerDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/item_background</item>
+    </style>
+
+</resources>
