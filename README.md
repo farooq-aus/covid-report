@@ -1,6 +1,13 @@
-<p align="center"><img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON"/></p>
+<table border="0">
+  <tr>
+    <td>
+      <h1>COVID REPORT</h1>
+    </td>
+    <td>
+        <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON"/>
+    </td>
+</table>
 
-# COVID REPORT
 #### Native Android app to fetch and display API data from [Disease.sh](https://github.com/disease-sh/API)
 <br></br>
 ## Screenshots
