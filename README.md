@@ -14,7 +14,7 @@
       <h1>COVID REPORT&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</h1>
     </td>
     <td>
-        <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON"/>
+        <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON" width=75 height=75/>
     </td>
 </table>
 
