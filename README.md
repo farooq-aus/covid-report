@@ -12,8 +12,8 @@
 <br></br>
 ## Screenshots
 #### Homepage
-![Homepage Screenshot](https://i.postimg.cc/pT0WwDqw/Screenshot-20201226-231659.jpg")
+![Homepage Screenshot 1](https://i.postimg.cc/fTmJ97bv/Screenshot-20201227-132206.jpg) ![Homepage Screenshot 2](https://i.postimg.cc/K8b4rKkh/Screenshot-20201227-132212.jpg)
 #### Search
-![Search Screenshot](https://i.postimg.cc/yxk1skGk/Screenshot-20201226-232505.jpg")
+![Search Screenshot](https://i.postimg.cc/WpQdzYs3/Screenshot-20201227-132227.jpg)
 #### Country wise info
-![Country wise info Screenshot 1](https://i.postimg.cc/bvYFv6F5/Screenshot-20201227-012212.jpg) ![Country wise info Screenshot 2](https://i.postimg.cc/0jLykKkt/Screenshot-20201227-014544.jpg)
+![Country wise info Screenshot 1](https://i.postimg.cc/rzX2TrXV/Screenshot-20201227-132251.jpg) ![Country wise info Screenshot 2](https://i.postimg.cc/DZNKCNxb/Screenshot-20201227-132320.jpg)
