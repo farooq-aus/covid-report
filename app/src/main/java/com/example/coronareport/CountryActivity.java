@@ -21,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -46,10 +47,14 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
     RadioGroup radioGroup;
 
+    ShimmerFrameLayout shimmerFrameLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.country_activity);
+
+        shimmerFrameLayout = (ShimmerFrameLayout) findViewById(R.id.shimmer_boi);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -122,7 +127,7 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
     @Override
     public void onLoadFinished(Loader<CountryData> loader, CountryData countryData) {
-        final View loadingIndicator = findViewById(R.id.progress);
+        //final View loadingIndicator = findViewById(R.id.progress);
 
         ImageView iw = (ImageView) findViewById(R.id.flag);
         Picasso.get()
@@ -130,7 +135,9 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
                 .into(iw, new com.squareup.picasso.Callback(){
                     @Override
                     public void onSuccess() {
-                        loadingIndicator.setVisibility(View.GONE);
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        //loadingIndicator.setVisibility(View.GONE);
                         countryInfo.setVisibility(View.VISIBLE);
                     }
 

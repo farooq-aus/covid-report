@@ -7,6 +7,17 @@
     tools:context=".CountryActivity"
     android:padding="24dp">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_boi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:shimmer_duration="800"
+        app:shimmer_auto_start="true">
+
+        <include layout="@layout/placeholder_country_activity" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    
     <ImageView
         android:id="@+id/close"
         android:layout_width="50dp"
@@ -29,14 +40,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="16dp">
+            android:layout_marginBottom="16dp">
 
             <ImageView
                 android:id="@+id/flag"
                 android:layout_width="46dp"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:paddingEnd="16dp"
+                android:layout_marginEnd="16dp"
                 />
 
             <TextView
@@ -331,11 +342,13 @@
         </RadioGroup>
 
     </LinearLayout>
+    <!--
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/colorAccent"
         android:layout_centerInParent="true" />
+     -->
 
 </RelativeLayout>

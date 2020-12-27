@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_background"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="20dp">
+
+    <View
+        android:id="@+id/ejnsw"
+        android:layout_width="50dp"
+        android:layout_height="14dp"
+        android:background="@drawable/accent_bg"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/ejnsw">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="56dp"
+                android:layout_height="24dp"
+                android:background="@drawable/white_bg"
+                android:layout_marginBottom="3dp"
+                />
+
+            <View
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:background="@drawable/grey_bg"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="72dp"
+                android:layout_height="24dp"
+                android:background="@drawable/white_bg"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/grey_bg"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="end"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:background="@drawable/white_bg"
+                android:layout_gravity="end"
+                android:layout_marginBottom="3dp"
+                />
+
+            <View
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end"
+                android:background="@drawable/grey_bg"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 
 public class CoronaActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<CoronaData>> {
@@ -38,10 +40,14 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
 
     private Spinner spinner;
 
+    private ShimmerFrameLayout shimmerFrameLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.corona_activity);
+
+        shimmerFrameLayout = (ShimmerFrameLayout) findViewById(R.id.shimmer_list);
 
         ListView coronaListView = (ListView) findViewById(R.id.list);
 
@@ -123,6 +129,8 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
             emptyView.setVisibility(View.VISIBLE);
         }
         if(swipeRefresh.isRefreshing()) {
+            shimmerFrameLayout.stopShimmer();
+            shimmerFrameLayout.setVisibility(View.GONE);
             swipeRefresh.setRefreshing(false);
         }
     }
@@ -140,6 +148,8 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
         coronaAdapter.clear();
 
         if(swipeRefresh.isRefreshing()) {
+            shimmerFrameLayout.stopShimmer();
+            shimmerFrameLayout.setVisibility(View.GONE);
             swipeRefresh.setRefreshing(false);
         }
 
