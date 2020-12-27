@@ -4,7 +4,7 @@
       <h1>Work in Progress&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
     </td>
     <td>
-        <img src="https://cdn.fabtechexpo.com/wp-content/uploads/caution.png" alt = "Work in Progress"/>
+        <img src="https://cdn.fabtechexpo.com/wp-content/uploads/caution.png" alt = "Work in Progress" width=75 height=75/>
     </td>
 </table>
 
