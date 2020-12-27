@@ -1,14 +1,24 @@
 <table border="0">
   <tr>
     <td>
-      <h1>COVID REPORT&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</h1>
+      <h1>Work in Progress&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</h1>
+    </td>
+    <td>
+        <img src="https://cdn.fabtechexpo.com/wp-content/uploads/caution.png" alt = "Work in Progress"/>
+    </td>
+</table>
+
+<table border="0">
+  <tr>
+    <td>
+      <h1>COVID REPORT&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</h1>
     </td>
     <td>
         <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON"/>
     </td>
 </table>
 
-#### Native Android app to fetch and display API data from [Disease.sh](https://github.com/disease-sh/API)
+### Native Android app to fetch and display API data from [Disease.sh](https://github.com/disease-sh/API)
 <br></br>
 ## Screenshots
 #### Homepage
