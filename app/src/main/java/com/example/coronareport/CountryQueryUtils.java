@@ -68,9 +68,9 @@ public class CountryQueryUtils extends QueryUtils {
             JSONObject timelineJsonResponse = new JSONObject(trendJSON).getJSONObject("timeline");
             for (Iterator<String> it = timelineJsonResponse.getJSONObject("cases").keys(); it.hasNext(); ) {
                 String key = it.next();
-                casesTrend.add(timelineJsonResponse.getJSONObject("cases").getInt(key));
-                deathsTrend.add(timelineJsonResponse.getJSONObject("deaths").getInt(key));
-                recoveriesTrend.add(timelineJsonResponse.getJSONObject("recovered").getInt(key));
+                casesTrend.add(timelineJsonResponse.getJSONObject("cases").optInt(key,0));
+                deathsTrend.add(timelineJsonResponse.getJSONObject("deaths").optInt(key,0));
+                recoveriesTrend.add(timelineJsonResponse.getJSONObject("recovered").optInt(key,0));
             }
 
             countryData = new CountryData(countryName, todayCases, todayDeaths, active, totalCases, totalDeaths, totalTests, recovered, critical, flagSrc, casesTrend, deathsTrend, recoveriesTrend);

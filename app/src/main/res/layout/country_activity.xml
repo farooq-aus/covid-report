@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/close"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
         android:src="@android:drawable/ic_menu_close_clear_cancel"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"

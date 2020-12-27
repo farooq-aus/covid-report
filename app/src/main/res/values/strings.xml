@@ -17,7 +17,12 @@
     <string name="deathspermil">Deaths Per One Million</string>
     <string name="testspermil">Tests Per One Million</string>
     <string name="search">Search Countries</string>
-    <string name="today">\@today</string>
+    <string-array name="spinner_options">
+        <item>Now</item>
+        <item>from Yesterday</item>
+        <item>from 2 Days Ago</item>
+    </string-array>
     <string name="not_found">No search results</string>
-    <string name="past15days">Trendline of past 15 days</string>
+    <string name="past15days">Trend over past 15 days</string>
+    <string name="topcases">Live Updates</string>
 </resources>

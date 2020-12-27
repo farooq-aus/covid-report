@@ -2,6 +2,8 @@ package com.example.coronareport;
 
 import android.content.Context;
 import android.content.AsyncTaskLoader;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class CoronaLoader extends AsyncTaskLoader<ArrayList<CoronaData>> {

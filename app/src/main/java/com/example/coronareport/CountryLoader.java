@@ -15,8 +15,7 @@ public class CountryLoader extends AsyncTaskLoader<CountryData> {
         super(context);
         this.url1 = urls[0];
         this.url2 = urls[1];
-        Log.e(LOG_TAG, url2);
-    }
+        }
 
     protected void onStartLoading() {
         forceLoad();

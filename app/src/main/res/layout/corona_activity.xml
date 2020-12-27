@@ -3,12 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:id="@+id/highest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/topcases"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/day_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:popupBackground="@color/colorAccentTint"
+            android:backgroundTint="@color/colorPrimaryDark" />
+
+    </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
+        android:layout_below="@+id/highest"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent" >
 
         <ListView
             android:id="@+id/list"
@@ -19,8 +46,10 @@
             android:dividerHeight="10dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:headerDividersEnabled="true"
             android:drawSelectorOnTop="true"
-            android:scrollbarThumbVertical="@color/colorAccent"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@drawable/searchbar_bg"
             android:scrollbarFadeDuration="100"
         />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
