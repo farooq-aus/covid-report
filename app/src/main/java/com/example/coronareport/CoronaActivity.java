@@ -6,6 +6,7 @@ import android.app.LoaderManager;
 import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -48,6 +50,15 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
         setContentView(R.layout.corona_activity);
 
         shimmerFrameLayout = (ShimmerFrameLayout) findViewById(R.id.shimmer_list);
+
+        Button goToNews = (Button) findViewById(R.id.gotonews);
+        goToNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), NewsActivity.class);
+                startActivity(i);
+            }
+        });
 
         ListView coronaListView = (ListView) findViewById(R.id.list);
 
@@ -129,8 +140,6 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
             emptyView.setVisibility(View.VISIBLE);
         }
         if(swipeRefresh.isRefreshing()) {
-            shimmerFrameLayout.stopShimmer();
-            shimmerFrameLayout.setVisibility(View.GONE);
             swipeRefresh.setRefreshing(false);
         }
     }
@@ -147,9 +156,10 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
         emptyView.setImageResource(R.drawable.not_found);
         coronaAdapter.clear();
 
+        shimmerFrameLayout.stopShimmer();
+        shimmerFrameLayout.setVisibility(View.GONE);
+
         if(swipeRefresh.isRefreshing()) {
-            shimmerFrameLayout.stopShimmer();
-            shimmerFrameLayout.setVisibility(View.GONE);
             swipeRefresh.setRefreshing(false);
         }
 

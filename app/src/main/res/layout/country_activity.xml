@@ -17,331 +17,336 @@
         <include layout="@layout/placeholder_country_activity" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
-    
-    <ImageView
-        android:id="@+id/close"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:padding="10dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        app:tint="@color/colorAccent"
-        android:focusable="true" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/country_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            app:tint="@color/colorAccent"
+            android:focusable="true" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/flag"
-                android:layout_width="46dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                />
-
-            <TextView
-                android:id="@+id/ccountry"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="USA"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/flag"
+                    android:layout_width="46dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/ccountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="USA"
+                    android:textColor="@color/colorAccent"
+                    android:textAllCaps="true"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="-0.1"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/active"
+                    android:textColor="@color/colorDefaultText"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/cactiveCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="34,890"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/casestoday"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/ccasesCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="34,890"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalcases"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/ctotalCasesCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="929,446"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        android:layout_gravity="end"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deathstoday"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/cdeathCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2,347"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totaldeaths"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/ctotalDeathCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="7,742"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        android:layout_gravity="end"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalrecovered"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/crecovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="34,890"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/criticalcases"
+                        android:textColor="@color/colorDefaultText"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/ccritical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="929,446"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        android:layout_gravity="end"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tests"
+                    android:textColor="@color/colorDefaultText"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:id="@+id/ctests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="34,890"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/trendlinetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/past15days"
                 android:textColor="@color/colorAccent"
                 android:textAllCaps="true"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:letterSpacing="-0.1"
-                />
+                android:textSize="14sp"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <RadioGroup
+                android:id="@+id/rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/rb1"
+                android:layout_gravity="center_horizontal">
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent"
+                    android:text="@string/cases" />
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorDeathTrend"
+                    android:text="@string/deaths" />
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorRecoveredTrend"
+                    android:text="@string/recovered" />
+            </RadioGroup>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/active"
-                android:textColor="@color/colorDefaultText"
-                android:textSize="20sp"
-                android:layout_gravity="center_horizontal"
-                android:textStyle="bold"
-                />
-
-            <TextView
-                android:id="@+id/cactiveCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="34,890"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:layout_gravity="center_horizontal"
-                />
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/casestoday"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    />
-
-                <TextView
-                    android:id="@+id/ccasesCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="34,890"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentEnd="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/totalcases"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    android:layout_gravity="end"
-                    />
-
-                <TextView
-                    android:id="@+id/ctotalCasesCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="929,446"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    android:layout_gravity="end"
-                    />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/deathstoday"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    />
-
-                <TextView
-                    android:id="@+id/cdeathCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="2,347"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentEnd="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/totaldeaths"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    android:layout_gravity="end"
-                    />
-
-                <TextView
-                    android:id="@+id/ctotalDeathCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="7,742"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    android:layout_gravity="end"
-                    />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/totalrecovered"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    />
-
-                <TextView
-                    android:id="@+id/crecovered"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="34,890"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentEnd="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/criticalcases"
-                    android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
-                    android:layout_gravity="end"
-                    />
-
-                <TextView
-                    android:id="@+id/ccritical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="929,446"
-                    android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    android:layout_gravity="end"
-                    />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tests"
-                android:textColor="@color/colorDefaultText"
-                android:textSize="20sp"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <TextView
-                android:id="@+id/ctests"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="34,890"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:layout_gravity="center_horizontal"
-                />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/trendlinetext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/past15days"
-            android:textColor="@color/colorAccent"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            android:layout_gravity="center_vertical"
-            android:textStyle="bold" />
-
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graph"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <RadioGroup
-            android:id="@+id/rg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/rb1"
-            android:layout_gravity="center_horizontal">
-            <RadioButton
-                android:id="@+id/rb1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorAccent"
-                android:text="@string/cases" />
-            <RadioButton
-                android:id="@+id/rb2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorDeathTrend"
-                android:text="@string/deaths" />
-            <RadioButton
-                android:id="@+id/rb3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorRecoveredTrend"
-                android:text="@string/recovered" />
-        </RadioGroup>
-
-    </LinearLayout>
+    </RelativeLayout>
     <!--
     <ProgressBar
         android:id="@+id/progress"

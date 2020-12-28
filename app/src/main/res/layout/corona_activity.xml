@@ -54,6 +54,13 @@
             android:popupBackground="@color/colorAccentTint"
             android:backgroundTint="@color/colorPrimaryDark" />
 
+        <Button
+            android:id="@+id/gotonews"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/news_icon"
+            android:layout_gravity="end"/>
+
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

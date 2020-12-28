@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,13 +33,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URL;
 
-public class CountryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<CountryData>  {
+public class CountryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<CountryData> {
 
     public static final String LOG_TAG = CountryActivity.class.getName();
 
     private static final int COUNTRY_LOADER_ID = 2;
 
-    private LinearLayout countryInfo;
+    private RelativeLayout countryInfo;
 
     GraphView gw;
     LineGraphSeries<DataPoint> caseSeries;
@@ -58,7 +59,7 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
         Bundle bundle = getIntent().getExtras();
 
-        countryInfo = (LinearLayout) findViewById(R.id.country_info);
+        countryInfo = (RelativeLayout) findViewById(R.id.country_info);
 
         android.app.LoaderManager loaderManager = getLoaderManager();
         loaderManager.initLoader(COUNTRY_LOADER_ID, bundle, this);
