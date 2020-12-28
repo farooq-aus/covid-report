@@ -43,7 +43,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         shimmerFrameLayout = (ShimmerFrameLayout) findViewById(R.id.news_shimmer_list);
 
         ListView newsListView = (ListView) findViewById(R.id.news_list);
-
         newsAdapter = new NewsAdapter(this, new ArrayList<NewsData>());
         newsListView.setAdapter(newsAdapter);
 

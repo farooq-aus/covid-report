@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,10 +11,12 @@
         android:background="@drawable/item_background"
         android:padding="16dp">
 
-        <include layout="@layout/placeholder_image"
-            android:id="@+id/shimmer_image"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/grey_bg" />
 
-        <TextView
+        <View
             android:layout_width="50dp"
             android:layout_height="16dp"
             android:layout_gravity="center_vertical"

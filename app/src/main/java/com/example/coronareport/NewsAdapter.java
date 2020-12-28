@@ -34,15 +34,20 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
         final NewsData n = getItem(position);
 
         ImageView iw = (ImageView) listItemView.findViewById(R.id.newsImage);
+        iw.setClipToOutline(true);
         Picasso.get()
                 .load(n.imgSrc)
+                .fit()
                 .into(iw);
 
         TextView tw = (TextView) listItemView.findViewById(R.id.source);
         tw.setText(n.source);
 
         TextView tw2 = (TextView) listItemView.findViewById(R.id.title);
-        tw2.setText(n.title);
+
+        String displayTitle = n.title.split(" - | \\| ")[0];
+
+        tw2.setText(displayTitle);
 
         TextView tw3 = (TextView) listItemView.findViewById(R.id.time);
 
