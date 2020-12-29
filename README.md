@@ -1,7 +1,7 @@
 <table border="0">
   <tr>
     <td>
-      <h1>Work in Progress&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+      <h1>Work in Progress</h1>
     </td>
     <td>
         <img src="https://cdn.fabtechexpo.com/wp-content/uploads/caution.png" alt = "Work in Progress" width=75 height=75/>
@@ -11,7 +11,7 @@
 <table border="0">
   <tr>
     <td>
-      <h1>COVID REPORT&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+      <h1>COVID REPORT</h1>
     </td>
     <td>
         <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON" width=75 height=75/>
