@@ -1,4 +1,4 @@
-<table border="0">
+<table width=100% border="0">
   <tr>
     <td>
       <h1>Work in Progress</h1>
@@ -8,7 +8,7 @@
     </td>
 </table>
 
-<table border="0">
+<table width=100% border="0">
   <tr>
     <td>
       <h1>COVID REPORT</h1>
@@ -20,7 +20,7 @@
 
 ### Native Android app to fetch and display API data from [Disease.sh](https://github.com/disease-sh/API)
 <br></br>
-## Screenshots
+## ~~Screenshots~~ (OUTDATED)
 #### Homepage
 ![Homepage Screenshot 1](https://i.postimg.cc/fTmJ97bv/Screenshot-20201227-132206.jpg) ![Homepage Screenshot 2](https://i.postimg.cc/K8b4rKkh/Screenshot-20201227-132212.jpg)
 #### Search
