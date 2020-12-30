@@ -3,6 +3,7 @@ package com.example.coronareport;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,8 @@ import java.util.Locale;
 
 public class NewsAdapter extends ArrayAdapter<NewsData> {
 
-    public NewsAdapter(Context context, ArrayList<NewsData> coronaList) {
-        super(context, 0, coronaList);
+    public NewsAdapter(Context context, ArrayList<NewsData> newsList) {
+        super(context, 0, newsList);
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -54,7 +55,7 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
         String displayDate = "";
         try {
             Date parsedDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(n.time);
-            displayDate = new SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault()).format(parsedDate);
+            displayDate = new SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault()).format(parsedDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -1,18 +1,20 @@
 package com.example.coronareport;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.LoaderManager;
-
-import androidx.appcompat.widget.SearchView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
+
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,9 +27,9 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 
-public class CoronaActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<CoronaData>> {
+public class CoronaFragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList<CoronaData>>  {
 
-    public static final String LOG_TAG = CoronaActivity.class.getName();
+    public static final String LOG_TAG = CoronaFragment.class.getName();
 
     private static final int CORONA_LOADER_ID = 1;
 
@@ -44,22 +46,25 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
 
     private ShimmerFrameLayout shimmerFrameLayout;
 
+    private SearchView searchView;
+
+    public CoronaFragment() {}
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.corona_activity);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.corona_activity, container, false);
 
-        shimmerFrameLayout = (ShimmerFrameLayout) findViewById(R.id.shimmer_list);
+        shimmerFrameLayout = (ShimmerFrameLayout) rootView.findViewById(R.id.shimmer_list);
 
-        ListView coronaListView = (ListView) findViewById(R.id.list);
+        ListView coronaListView = (ListView) rootView.findViewById(R.id.list);
 
-        coronaAdapter = new CoronaAdapter(this, new ArrayList<CoronaData>());
+        coronaAdapter = new CoronaAdapter(getActivity(), new ArrayList<CoronaData>());
         coronaListView.setAdapter(coronaAdapter);
 
-        emptyView = (ImageView) findViewById(R.id.empty_tw);
+        emptyView = (ImageView) rootView.findViewById(R.id.empty_tw);
         coronaListView.setEmptyView(emptyView);
 
-        swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
         swipeRefresh.setProgressBackgroundColorSchemeColor(getResources().getColor(R.color.colorPrimaryDark));
         swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -69,8 +74,8 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
             }
         });
 
-        spinner = (Spinner) findViewById(R.id.day_spinner);
-        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
+        spinner = (Spinner) rootView.findViewById(R.id.day_spinner);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.spinner_options, R.layout.spinner_item);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -97,10 +102,10 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
             }
         });
 
-        android.app.LoaderManager loaderManager = getLoaderManager();
+        android.app.LoaderManager loaderManager = getActivity().getLoaderManager();
         loaderManager.initLoader(CORONA_LOADER_ID, null, this);
 
-        SearchView searchView = (SearchView) findViewById(R.id.search);
+        searchView = (SearchView) rootView.findViewById(R.id.search);
         searchView.setIconifiedByDefault(false);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -114,20 +119,39 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
                 return true;
             }
         });
+
+        ImageView searchButton = (ImageView) rootView.findViewById(R.id.search_button);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView i = (ImageView) v;
+                if(searchView.getVisibility() == View.GONE) {
+                    searchView.setVisibility(View.VISIBLE);
+                    i.setImageResource(R.drawable.search_off_icon);
+                }
+                else {
+                    searchView.setVisibility(View.GONE);
+                    i.setImageResource(R.drawable.search_icon);
+                }
+            }
+        });
+
+        return rootView;
     }
 
     private void refreshList() {
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected()) {
-            android.app.LoaderManager loaderManager = getLoaderManager();
+            android.app.LoaderManager loaderManager = getActivity().getLoaderManager();
             loaderManager.restartLoader(CORONA_LOADER_ID, null, this);
         }
         else {
             coronaAdapter.clear();
             emptyView.setImageResource(R.drawable.disconnected_icon);
-            Toast.makeText(this, R.string.no_connection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.no_connection, Toast.LENGTH_SHORT).show();
             emptyView.setVisibility(View.VISIBLE);
         }
         if(swipeRefresh.isRefreshing()) {
@@ -139,7 +163,7 @@ public class CoronaActivity extends AppCompatActivity implements LoaderManager.L
         if(!swipeRefresh.isRefreshing()) {
             swipeRefresh.setRefreshing(true);
         }
-        return new CoronaLoader(this, COVID_REQUEST_URL);
+        return new CoronaLoader(getActivity(), COVID_REQUEST_URL);
     }
 
     public void onLoadFinished(Loader<ArrayList<CoronaData>> loader, ArrayList<CoronaData> coronaList) {

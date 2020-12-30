@@ -18,14 +18,14 @@
     <string name="testspermil">Tests Per One Million</string>
     <string name="search">Search Countries</string>
     <string-array name="spinner_options">
-        <item>Now</item>
+        <item>Just Now</item>
         <item>from Yesterday</item>
         <item>from 2 Days Ago</item>
     </string-array>
     <string name="not_found">No search results</string>
     <string name="past15days">Trend over past 15 days</string>
-    <string name="topcases">Live Updates</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="topcases">Live Updated</string>
     <string name="news">News</string>
+    <string name="global">Global</string>
+    <string name="countries">Countries</string>
 </resources>

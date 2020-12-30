@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_list"
@@ -18,7 +17,6 @@
             android:padding="16dp"
             android:orientation="vertical">
 
-            <include layout="@layout/placeholder_list_item" />
             <include layout="@layout/placeholder_list_item" />
             <include layout="@layout/placeholder_list_item" />
             <include layout="@layout/placeholder_list_item" />
@@ -54,13 +52,16 @@
             android:popupBackground="@color/colorAccentTint"
             android:backgroundTint="@color/colorPrimaryDark" />
 
-        <Button
-            android:id="@+id/gotonews"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/news_icon"
-            android:layout_gravity="end"
-            android:gravity="center_horizontal|center_vertical"/>
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/search_icon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            app:tint="@color/colorPrimaryDark"
+            android:focusable="true" />
 
     </LinearLayout>
 
@@ -97,6 +98,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/accent_bg"
         android:clickable="true"
+        android:visibility="gone"
         app:defaultQueryHint="@string/search"
         app:queryHint="@string/search"
         android:iconifiedByDefault="false"

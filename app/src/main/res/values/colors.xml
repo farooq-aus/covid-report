@@ -6,7 +6,7 @@
     <color name="colorItem">#202020</color>
     <color name="colorDefaultText">#ffffff</color>
     <color name="colorSecondaryText">#a0a0a0</color>
-    <color name="colorAccentTint">#E600DD99</color>
+    <color name="colorAccentTint">#F200DD99</color>
     <color name="colorRecoveredTrend">#3296FF</color>
     <color name="colorDeathTrend">#FF3232</color>
 </resources>
