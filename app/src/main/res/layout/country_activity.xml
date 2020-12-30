@@ -28,12 +28,11 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="10dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:src="@drawable/close_icon"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            app:tint="@color/colorAccent"
             android:focusable="true" />
 
         <LinearLayout

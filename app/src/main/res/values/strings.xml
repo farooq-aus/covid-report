@@ -19,13 +19,14 @@
     <string name="search">Search Countries</string>
     <string-array name="spinner_options">
         <item>Just Now</item>
-        <item>from Yesterday</item>
-        <item>from 2 Days Ago</item>
+        <item>Yesterday</item>
+        <item>2 Days Ago</item>
     </string-array>
     <string name="not_found">No search results</string>
     <string name="past15days">Trend over past 15 days</string>
-    <string name="topcases">Live Updated</string>
+    <string name="topcases">Updated</string>
     <string name="news">News</string>
     <string name="global">Global</string>
     <string name="countries">Countries</string>
+    <string name="sorted_by">Sorted by:</string>
 </resources>

@@ -38,6 +38,7 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
         iw.setClipToOutline(true);
         Picasso.get()
                 .load(n.imgSrc)
+                .placeholder(R.drawable.news_placeholder)
                 .fit()
                 .into(iw);
 
