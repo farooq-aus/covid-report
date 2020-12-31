@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class CountryQueryUtils extends QueryUtils {
+public class CountryQueryUtils extends CoronaQueryUtils {
 
     CountryQueryUtils(){
         super();

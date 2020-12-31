@@ -117,13 +117,11 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
 
     @Override
     public Loader<CountryData> onCreateLoader(int i, Bundle bundle) {
-        StringBuilder builder = new StringBuilder("https://disease.sh/v3/covid-19/countries/");
-        builder.append(bundle.getString("COUNTRY_NAME"));
-        builder.append("?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true");
-        StringBuilder builder2 = new StringBuilder("https://disease.sh/v3/covid-19/historical/");
-        builder2.append(bundle.getString("COUNTRY_NAME"));
-        builder2.append("?lastdays=15");
-        return new CountryLoader(this, builder.toString(), builder2.toString());
+        String builder = "https://disease.sh/v3/covid-19/countries/" + bundle.getString("COUNTRY_NAME") +
+                "?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true";
+        String builder2 = "https://disease.sh/v3/covid-19/historical/" + bundle.getString("COUNTRY_NAME") +
+                "?lastdays=16";
+        return new CountryLoader(this, builder, builder2);
     }
 
     @Override
@@ -152,14 +150,21 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         gw.getGridLabelRenderer().setHorizontalLabelsVisible(false);
 
         try {
-            DataPoint[] caseDataPoints = new DataPoint[countryData.casesTrend.size()];
-            DataPoint[] deathDataPoints = new DataPoint[countryData.casesTrend.size()];
-            DataPoint[] recoveryDataPoints = new DataPoint[countryData.casesTrend.size()];
+            DataPoint[] caseDataPoints = new DataPoint[countryData.casesTrend.size()-1];
+            DataPoint[] deathDataPoints = new DataPoint[countryData.deathsTrend.size()-1];
+            DataPoint[] recoveryDataPoints = new DataPoint[countryData.recoveriesTrend.size()-1];
 
-            for(int i = 0; i < countryData.casesTrend.size(); i++) {
-                caseDataPoints[i] = new DataPoint(i, countryData.casesTrend.get(i));
-                deathDataPoints[i] = new DataPoint(i, countryData.deathsTrend.get(i));
-                recoveryDataPoints[i] = new DataPoint(i, countryData.recoveriesTrend.get(i));
+            int prevCasesData = countryData.casesTrend.get(0);
+            int prevDeathData = countryData.deathsTrend.get(0);
+            int prevRecoveriesData = countryData.recoveriesTrend.get(0);
+
+            for(int i = 0; i < countryData.casesTrend.size()-1; i++) {
+                caseDataPoints[i] = new DataPoint(i, countryData.casesTrend.get(i+1)-prevCasesData);
+                deathDataPoints[i] = new DataPoint(i, countryData.deathsTrend.get(i+1)-prevDeathData);
+                recoveryDataPoints[i] = new DataPoint(i, countryData.recoveriesTrend.get(i+1)-prevRecoveriesData);
+                prevCasesData = countryData.casesTrend.get(i);
+                prevDeathData = countryData.deathsTrend.get(i);
+                prevRecoveriesData = countryData.recoveriesTrend.get(i);
             }
 
             caseSeries = new LineGraphSeries<>(caseDataPoints);
@@ -233,5 +238,4 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         CoronaAdapter.setText(tw9, countryData.totalTests);
 
     }
-
 }

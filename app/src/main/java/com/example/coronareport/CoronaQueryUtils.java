@@ -14,15 +14,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class QueryUtils {
+public class CoronaQueryUtils {
 
-    public static final String LOG_TAG = QueryUtils.class.getName();
+    public static final String LOG_TAG = CoronaQueryUtils.class.getName();
 
-    QueryUtils() {}
+    CoronaQueryUtils() {}
 
     public static ArrayList<CoronaData> fetchCoronaData(String requestUrl)
     {

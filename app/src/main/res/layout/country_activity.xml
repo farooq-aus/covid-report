@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".CountryActivity"
     android:padding="24dp">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_boi"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:shimmer_duration="800"
         app:shimmer_auto_start="true">
@@ -20,8 +20,9 @@
 
     <RelativeLayout
         android:id="@+id/country_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
         <ImageView
             android:id="@+id/close"
@@ -47,8 +48,8 @@
 
                 <ImageView
                     android:id="@+id/flag"
-                    android:layout_width="46dp"
-                    android:layout_height="42dp"
+                    android:layout_width="56dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     />

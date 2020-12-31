@@ -2,7 +2,6 @@ package com.example.coronareport;
 
 import android.app.LoaderManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -17,9 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,11 +38,13 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
     public static String COVID_REQUEST_URL =
             "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=false";
 
+    String[] day = {"false", "false"};
+
+    String sort = "todayCases";
+
     private ImageView emptyView;
 
     private SwipeRefreshLayout swipeRefresh;
-
-    private Spinner spinner;
 
     private ShimmerFrameLayout shimmerFrameLayout;
 
@@ -52,7 +54,7 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.corona_activity, container, false);
+        View rootView = inflater.inflate(R.layout.corona_fragment, container, false);
 
         shimmerFrameLayout = (ShimmerFrameLayout) rootView.findViewById(R.id.shimmer_list);
 
@@ -74,7 +76,7 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
             }
         });
 
-        spinner = (Spinner) rootView.findViewById(R.id.day_spinner);
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.day_spinner);
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.spinner_options, R.layout.spinner_item);
         spinner.setAdapter(spinnerAdapter);
@@ -83,15 +85,19 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 1:
-                        COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday=true&twoDaysAgo=false&sort=cases&allowNull=false";
+                        day[0] = "true";
+                        day[1] = "false";
                         break;
                     case 2:
-                        COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=true&sort=cases&allowNull=false";
+                        day[0] = "false";
+                        day[1] = "true";
                         break;
                     default:
-                        COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=false";
+                        day[0] = "false";
+                        day[1] = "false";
                         break;
                 }
+                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+day[0]+"&twoDaysAgo="+day[1]+"&sort="+sort+"&allowNull=false";
                 swipeRefresh.setRefreshing(true);
                 refreshList();
             }
@@ -120,7 +126,7 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
             }
         });
 
-        ImageView searchButton = (ImageView) rootView.findViewById(R.id.search_button);
+        final ImageView searchButton = (ImageView) rootView.findViewById(R.id.search_button);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,9 +137,30 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
                     i.setImageResource(R.drawable.search_off_icon);
                 }
                 else {
+                    searchView.setQuery("", false);
                     searchView.setVisibility(View.GONE);
                     i.setImageResource(R.drawable.search_icon);
                 }
+            }
+        });
+
+        RadioGroup radioGroup = rootView.findViewById(R.id.sort_bar);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case 1:
+                        sort = "todayDeaths";
+                        break;
+                    case 2:
+                        sort = "active";
+                        break;
+                    default:
+                        sort = "todayCases";
+                }
+                swipeRefresh.setRefreshing(true);
+                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+day[0]+"&twoDaysAgo="+day[1]+"&sort="+sort+"&allowNull=false";
+                refreshList();
             }
         });
 
@@ -174,12 +201,12 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
         shimmerFrameLayout.stopShimmer();
         shimmerFrameLayout.setVisibility(View.GONE);
 
-        if(swipeRefresh.isRefreshing()) {
-            swipeRefresh.setRefreshing(false);
-        }
-
         if (coronaList != null && !coronaList.isEmpty()) {
             coronaAdapter.addAll(coronaList);
+        }
+
+        if(swipeRefresh.isRefreshing()) {
+            swipeRefresh.setRefreshing(false);
         }
     }
 

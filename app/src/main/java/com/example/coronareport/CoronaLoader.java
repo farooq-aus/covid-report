@@ -2,7 +2,6 @@ package com.example.coronareport;
 
 import android.content.Context;
 import android.content.AsyncTaskLoader;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ public class CoronaLoader extends AsyncTaskLoader<ArrayList<CoronaData>> {
         if(url == null)
             return null;
 
-        ArrayList<CoronaData> result = QueryUtils.fetchCoronaData(url);
+        ArrayList<CoronaData> result = CoronaQueryUtils.fetchCoronaData(url);
         return result;
     }
 }

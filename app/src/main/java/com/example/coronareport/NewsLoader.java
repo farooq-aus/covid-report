@@ -2,7 +2,6 @@ package com.example.coronareport;
 
 import android.content.Context;
 import android.content.AsyncTaskLoader;
-import android.util.Log;
 
 import java.util.ArrayList;
 

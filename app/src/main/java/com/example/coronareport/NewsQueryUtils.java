@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class NewsQueryUtils extends QueryUtils {
+public class NewsQueryUtils extends CoronaQueryUtils {
 
     public static final String LOG_TAG = NewsQueryUtils.class.getName();
 

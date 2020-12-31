@@ -2,11 +2,10 @@ package com.example.coronareport;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.util.Log;
 
 public class CountryLoader extends AsyncTaskLoader<CountryData> {
 
-    private static final String LOG_TAG = CoronaLoader.class.getName();
+    private static final String LOG_TAG = CountryLoader.class.getName();
 
     String url1;
     String url2;

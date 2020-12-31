@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class NewsFragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList<NewsData>>  {
 
-    private static final String LOG_TAG = NewsActivity.class.getName();
+    private static final String LOG_TAG = NewsFragment.class.getName();
 
     private static final int NEWS_LOADER_ID = 3;
 
@@ -43,7 +43,7 @@ public class NewsFragment extends Fragment implements LoaderManager.LoaderCallba
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.news_activity, container, false);;
+        View rootView = inflater.inflate(R.layout.news_fragment, container, false);;
 
         shimmerFrameLayout = (ShimmerFrameLayout) rootView.findViewById(R.id.news_shimmer_list);
 
@@ -90,9 +90,9 @@ public class NewsFragment extends Fragment implements LoaderManager.LoaderCallba
     }
 
     public Loader<ArrayList<NewsData>> onCreateLoader(int i, Bundle bundle) {
-        if(!swipeRefresh.isRefreshing()) {
-            swipeRefresh.setRefreshing(true);
-        }
+//        if(!swipeRefresh.isRefreshing()) {
+//            swipeRefresh.setRefreshing(true);
+//        }
         return new NewsLoader(getActivity(), NEWS_REQUEST_URL);
     }
 
