@@ -13,8 +13,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -30,8 +33,10 @@ public class NewsFragment extends Fragment implements LoaderManager.LoaderCallba
 
     NewsAdapter newsAdapter;
 
-    public static final String NEWS_REQUEST_URL =
+    public static String NEWS_REQUEST_URL =
             "https://saurav.tech/NewsAPI/top-headlines/category/health/us.json";
+
+    String SOURCE_PARAM = "us";
 
     private ImageView emptyView;
 
@@ -53,6 +58,44 @@ public class NewsFragment extends Fragment implements LoaderManager.LoaderCallba
 
         emptyView = (ImageView) rootView.findViewById(R.id.empty_tw_news);
         newsListView.setEmptyView(emptyView);
+
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.news_spinner);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.news_spinner_options, R.layout.spinner_item);
+        spinner.setAdapter(spinnerAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 1:
+                        SOURCE_PARAM = "in";
+                        break;
+                    case 2:
+                        SOURCE_PARAM = "au";
+                        break;
+                    case 3:
+                        SOURCE_PARAM = "ru";
+                        break;
+                    case 4:
+                        SOURCE_PARAM = "fr";
+                        break;
+                    case 5:
+                        SOURCE_PARAM = "gb";
+                        break;
+                    default:
+                        SOURCE_PARAM = "us";
+                        break;
+                }
+                NEWS_REQUEST_URL = "https://saurav.tech/NewsAPI/top-headlines/category/health/"+SOURCE_PARAM+".json";
+                swipeRefresh.setRefreshing(true);
+                refreshList();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.news_swipe_refresh);
         swipeRefresh.setProgressBackgroundColorSchemeColor(rootView.getResources().getColor(R.color.colorPrimaryDark));
@@ -104,13 +147,14 @@ public class NewsFragment extends Fragment implements LoaderManager.LoaderCallba
         shimmerFrameLayout.stopShimmer();
         shimmerFrameLayout.setVisibility(View.GONE);
 
+        if (newsList != null && !newsList.isEmpty()) {
+            newsAdapter.addAll(newsList);
+        }
+
         if(swipeRefresh.isRefreshing()) {
             swipeRefresh.setRefreshing(false);
         }
 
-        if (newsList != null && !newsList.isEmpty()) {
-            newsAdapter.addAll(newsList);
-        }
     }
 
     public void onLoaderReset(Loader<ArrayList<NewsData>> loader) {

@@ -11,6 +11,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -38,9 +38,9 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
     public static String COVID_REQUEST_URL =
             "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=false";
 
-    String[] day = {"false", "false"};
+    String[] DAY_PARAM = {"false", "false"};
 
-    String sort = "todayCases";
+    String SORT_PARAM = "todayCases";
 
     private ImageView emptyView;
 
@@ -85,19 +85,19 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 1:
-                        day[0] = "true";
-                        day[1] = "false";
+                        DAY_PARAM[0] = "true";
+                        DAY_PARAM[1] = "false";
                         break;
                     case 2:
-                        day[0] = "false";
-                        day[1] = "true";
+                        DAY_PARAM[0] = "false";
+                        DAY_PARAM[1] = "true";
                         break;
                     default:
-                        day[0] = "false";
-                        day[1] = "false";
+                        DAY_PARAM[0] = "false";
+                        DAY_PARAM[1] = "false";
                         break;
                 }
-                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+day[0]+"&twoDaysAgo="+day[1]+"&sort="+sort+"&allowNull=false";
+                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+ DAY_PARAM[0]+"&twoDaysAgo="+ DAY_PARAM[1]+"&sort="+ SORT_PARAM +"&allowNull=false";
                 swipeRefresh.setRefreshing(true);
                 refreshList();
             }
@@ -131,6 +131,8 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator vib = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+                vib.vibrate(25);
                 ImageView i = (ImageView) v;
                 if(searchView.getVisibility() == View.GONE) {
                     searchView.setVisibility(View.VISIBLE);
@@ -150,16 +152,16 @@ public class CoronaFragment extends Fragment implements LoaderManager.LoaderCall
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case 1:
-                        sort = "todayDeaths";
+                        SORT_PARAM = "todayDeaths";
                         break;
                     case 2:
-                        sort = "active";
+                        SORT_PARAM = "active";
                         break;
                     default:
-                        sort = "todayCases";
+                        SORT_PARAM = "todayCases";
                 }
                 swipeRefresh.setRefreshing(true);
-                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+day[0]+"&twoDaysAgo="+day[1]+"&sort="+sort+"&allowNull=false";
+                COVID_REQUEST_URL = "https://disease.sh/v3/covid-19/countries?yesterday="+ DAY_PARAM[0]+"&twoDaysAgo="+ DAY_PARAM[1]+"&sort="+ SORT_PARAM +"&allowNull=false";
                 refreshList();
             }
         });

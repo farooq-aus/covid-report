@@ -24,6 +24,7 @@
     </style>
 
     <style name="RoundCornerDialogTheme" parent="Theme.AppCompat.DialogWhenLarge">
+        <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/item_background</item>
     </style>
 

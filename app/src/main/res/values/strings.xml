@@ -29,6 +29,14 @@
     <string name="global">Global</string>
     <string name="countries">Countries</string>
     <string name="sorted_by">Sorted by:</string>
-    <string name="welcome_msg">Here are the updates for</string>
+    <string name="welcome_msg">Here are the updates for today</string>
     <string name="worldwide">worldwide</string>
+    <string-array name="news_spinner_options">
+        <item>USA</item>
+        <item>India</item>
+        <item>Australia</item>
+        <item>Russia</item>
+        <item>France</item>
+        <item>United Kingdom</item>
+    </string-array>
 </resources>
