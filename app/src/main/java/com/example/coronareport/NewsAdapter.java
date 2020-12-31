@@ -11,6 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.browser.customtabs.CustomTabColorSchemeParams;
+import androidx.browser.customtabs.CustomTabsIntent;
+import androidx.core.content.ContextCompat;
+
 import com.squareup.picasso.Picasso;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,8 +24,11 @@ import java.util.Locale;
 
 public class NewsAdapter extends ArrayAdapter<NewsData> {
 
+    private Context callerContext;
+
     public NewsAdapter(Context context, ArrayList<NewsData> newsList) {
         super(context, 0, newsList);
+        this.callerContext = context;
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -66,13 +73,25 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
         listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri newsUri = Uri.parse(n.url);
-                Intent intent = new Intent(Intent.ACTION_VIEW, newsUri);
-                getContext().startActivity(intent);
+                openChromeCustomTab(n.url);
             }
         });
 
         return listItemView;
+
+    }
+
+    private void openChromeCustomTab(String url) {
+
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabColorSchemeParams params = new CustomTabColorSchemeParams.Builder()
+                .setNavigationBarColor(ContextCompat.getColor(callerContext,R.color.colorPrimaryDark))
+                .setToolbarColor(ContextCompat.getColor(callerContext,R.color.colorAccent))
+                .setSecondaryToolbarColor(ContextCompat.getColor(callerContext,R.color.colorPrimaryDark))
+                .build();
+        builder.setColorSchemeParams(CustomTabsIntent.COLOR_SCHEME_DARK, params);
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(callerContext, Uri.parse(url));
 
     }
 

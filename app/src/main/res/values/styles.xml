@@ -23,8 +23,10 @@
         <item name="android:textSize">32dp</item>
     </style>
 
-    <style name="RoundCornerDialogTheme" parent="Theme.AppCompat.DialogWhenLarge">
+    <style name="RoundCornerDialogTheme" parent="Theme.AppCompat.Dialog">
         <item name="windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">97%</item>
+        <item name="android:windowMinWidthMinor">97%</item>
         <item name="android:windowBackground">@drawable/item_background</item>
     </style>
 

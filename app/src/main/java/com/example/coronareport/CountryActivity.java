@@ -13,6 +13,7 @@ import android.os.Vibrator;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -70,7 +71,8 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
             @Override
             public void onClick(View view) {
                 Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(25);finish();
+                v.vibrate(25);
+                finish();
             }
         });
 
