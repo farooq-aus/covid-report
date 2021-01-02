@@ -1,16 +1,6 @@
 <table width=100% border="0">
   <tr>
     <td>
-      <h1>Work in Progress</h1>
-    </td>
-    <td>
-        <img src="https://cdn.fabtechexpo.com/wp-content/uploads/caution.png" alt = "Work in Progress" width=75 height=75/>
-    </td>
-</table>
-
-<table width=100% border="0">
-  <tr>
-    <td>
       <h1>COVID REPORT</h1>
     </td>
     <td>
