@@ -1,6 +1,7 @@
 package com.example.coronareport;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
@@ -32,6 +33,7 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -85,7 +87,7 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 gw.removeAllSeries();
-                switch(i){
+                switch (i) {
                     case R.id.rb2:
                         gw.addSeries(deathSeries);
                         trendText.setTextColor(getResources().getColor(R.color.colorDeathTrend));
@@ -112,9 +114,7 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
             android.app.LoaderManager loaderManager = getLoaderManager();
             loaderManager.initLoader(COUNTRY_LOADER_ID, null, this);
             countryInfo.setVisibility(View.GONE);
-        }
-        else
-        {
+        } else {
             Toast.makeText(this, R.string.no_connection, Toast.LENGTH_LONG).show();
         }
     }
@@ -135,7 +135,8 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         ImageView iw = (ImageView) findViewById(R.id.flag);
         Picasso.get()
                 .load(countryData.flagSrc)
-                .into(iw, new com.squareup.picasso.Callback(){
+                .placeholder(R.drawable.world_icon)
+                .into(iw, new com.squareup.picasso.Callback() {
                     @Override
                     public void onSuccess() {
                         shimmerFrameLayout.stopShimmer();
@@ -154,18 +155,18 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         gw.getGridLabelRenderer().setHorizontalLabelsVisible(false);
 
         try {
-            DataPoint[] caseDataPoints = new DataPoint[countryData.casesTrend.size()-1];
-            DataPoint[] deathDataPoints = new DataPoint[countryData.deathsTrend.size()-1];
-            DataPoint[] recoveryDataPoints = new DataPoint[countryData.recoveriesTrend.size()-1];
+            DataPoint[] caseDataPoints = new DataPoint[countryData.casesTrend.size() - 1];
+            DataPoint[] deathDataPoints = new DataPoint[countryData.deathsTrend.size() - 1];
+            DataPoint[] recoveryDataPoints = new DataPoint[countryData.recoveriesTrend.size() - 1];
 
             int prevCasesData = countryData.casesTrend.get(0);
             int prevDeathData = countryData.deathsTrend.get(0);
             int prevRecoveriesData = countryData.recoveriesTrend.get(0);
 
-            for(int i = 0; i < countryData.casesTrend.size()-1; i++) {
-                caseDataPoints[i] = new DataPoint(i, countryData.casesTrend.get(i+1)-prevCasesData);
-                deathDataPoints[i] = new DataPoint(i, countryData.deathsTrend.get(i+1)-prevDeathData);
-                recoveryDataPoints[i] = new DataPoint(i, countryData.recoveriesTrend.get(i+1)-prevRecoveriesData);
+            for (int i = 0; i < countryData.casesTrend.size() - 1; i++) {
+                caseDataPoints[i] = new DataPoint(i, countryData.casesTrend.get(i + 1) - prevCasesData);
+                deathDataPoints[i] = new DataPoint(i, countryData.deathsTrend.get(i + 1) - prevDeathData);
+                recoveryDataPoints[i] = new DataPoint(i, countryData.recoveriesTrend.get(i + 1) - prevRecoveriesData);
                 prevCasesData = countryData.casesTrend.get(i);
                 prevDeathData = countryData.deathsTrend.get(i);
                 prevRecoveriesData = countryData.recoveriesTrend.get(i);

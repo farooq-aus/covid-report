@@ -31,9 +31,9 @@ public class CountryQueryUtils extends CoronaQueryUtils {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        CountryData coronaData = extractFeatureFromJson(jsonResponse1, jsonResponse2);
+        CountryData countryData = extractFeatureFromJson(jsonResponse1, jsonResponse2);
 
-        return coronaData;
+        return countryData;
     }
 
     public static CountryData extractFeatureFromJson(String countryJSON, String trendJSON) {

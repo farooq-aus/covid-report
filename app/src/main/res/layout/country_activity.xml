@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/active"
                     android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:layout_gravity="center_horizontal"
                     android:textStyle="bold"
                     />
@@ -90,13 +90,13 @@
                     android:layout_height="wrap_content"
                     tools:text="34,890"
                     android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:layout_gravity="center_horizontal"
                     />
             </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -105,14 +105,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentStart="true">
+                    android:layout_weight="1"
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/casestoday"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -121,8 +123,9 @@
                         android:layout_height="wrap_content"
                         tools:text="34,890"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
@@ -130,15 +133,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentEnd="true">
+                    android:layout_weight="1">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/totalcases"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
-                        android:layout_gravity="end"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -147,15 +150,15 @@
                         android:layout_height="wrap_content"
                         tools:text="929,446"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
-                        android:layout_gravity="end"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -164,14 +167,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentStart="true">
+                    android:layout_weight="1">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/deathstoday"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -180,8 +184,9 @@
                         android:layout_height="wrap_content"
                         tools:text="2,347"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
@@ -189,15 +194,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentEnd="true">
+                    android:layout_weight="1">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/totaldeaths"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
-                        android:layout_gravity="end"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -206,15 +211,15 @@
                         android:layout_height="wrap_content"
                         tools:text="7,742"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
-                        android:layout_gravity="end"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -224,14 +229,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentStart="true">
+                    android:layout_weight="1">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/totalrecovered"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -240,8 +246,9 @@
                         android:layout_height="wrap_content"
                         tools:text="34,890"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
@@ -249,15 +256,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentEnd="true">
+                    android:layout_weight="1">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/criticalcases"
                         android:textColor="@color/colorDefaultText"
-                        android:textSize="20sp"
-                        android:layout_gravity="end"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
                         />
 
                     <TextView
@@ -266,13 +273,13 @@
                         android:layout_height="wrap_content"
                         tools:text="929,446"
                         android:textColor="@color/colorSecondaryText"
-                        android:textSize="16sp"
-                        android:textStyle="italic"
-                        android:layout_gravity="end"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
 
-            </RelativeLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -286,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tests"
                     android:textColor="@color/colorDefaultText"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:layout_gravity="center_horizontal"
                     />
 
@@ -296,9 +303,9 @@
                     android:layout_height="wrap_content"
                     tools:text="34,890"
                     android:textColor="@color/colorSecondaryText"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
                     />
             </LinearLayout>
 
@@ -316,31 +323,36 @@
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/graph"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
+                android:layout_height="250dp"
+                android:layout_marginBottom="5dp"/>
 
             <RadioGroup
                 android:id="@+id/rg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:checkedButton="@id/rb1"
-                android:layout_gravity="center_horizontal">
+                android:gravity="center">
                 <RadioButton
                     android:id="@+id/rb1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:buttonTint="@color/colorAccent"
                     android:text="@string/cases" />
                 <RadioButton
                     android:id="@+id/rb2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:buttonTint="@color/colorDeathTrend"
                     android:text="@string/deaths" />
                 <RadioButton
                     android:id="@+id/rb3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:buttonTint="@color/colorRecoveredTrend"
                     android:text="@string/recovered" />
             </RadioGroup>

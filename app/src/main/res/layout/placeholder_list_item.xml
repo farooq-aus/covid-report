@@ -32,14 +32,16 @@
 
             <View
                 android:layout_width="56dp"
-                android:layout_height="24dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="@drawable/white_bg"
                 android:layout_marginBottom="3dp"
                 />
 
             <View
-                android:layout_width="75dp"
-                android:layout_height="20dp"
+                android:layout_width="85dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
 
@@ -54,15 +56,15 @@
 
             <View
                 android:layout_width="72dp"
-                android:layout_height="24dp"
+                android:layout_height="20dp"
                 android:background="@drawable/white_bg"
                 android:layout_gravity="center"
                 android:layout_marginBottom="3dp"
                 />
 
             <View
-                android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_width="65dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
@@ -78,18 +80,25 @@
 
             <View
                 android:layout_width="120dp"
-                android:layout_height="24dp"
+                android:layout_height="20dp"
                 android:background="@drawable/white_bg"
-                android:layout_gravity="end"
+                android:layout_gravity="center"
                 android:layout_marginBottom="3dp"
                 />
 
             <View
-                android:layout_width="75dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
+                android:layout_width="85dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/white_bg"
+                android:layout_gravity="end" />
 
         </LinearLayout>
 

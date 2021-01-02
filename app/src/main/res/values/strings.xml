@@ -23,20 +23,29 @@
         <item>2 Days Ago</item>
     </string-array>
     <string name="not_found">No search results</string>
-    <string name="past15days">Trend over past 15 days</string>
+    <string name="past15days">Trend over last 15 days</string>
     <string name="topcases">Updated</string>
     <string name="news">News</string>
     <string name="global">Global</string>
     <string name="countries">Countries</string>
-    <string name="sorted_by">Sorted by:</string>
+    <string name="sorted_by">Sort by:</string>
     <string name="welcome_msg">Here are the updates for today</string>
     <string name="worldwide">worldwide</string>
+    <string name="quarantined">Quarantined</string>
+    <string name="information">Information</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="about">About</string>
+    <string name="prevention">Prevention</string>
+    <string name="about_corona">Information on the COVID-19 coronavirus</string>
+    <string name="symptoms_info">Signs and symptoms to identify infection</string>
+    <string name="prevention_info">Take steps to reduce your risk of infection</string>
+    <string name="copyright">Copyright © All Rights Reserved</string>
     <string-array name="news_spinner_options">
         <item>USA</item>
         <item>India</item>
         <item>Australia</item>
         <item>Russia</item>
         <item>France</item>
-        <item>United Kingdom</item>
+        <item>UK</item>
     </string-array>
 </resources>

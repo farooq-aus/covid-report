@@ -63,7 +63,7 @@
                 />
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -73,11 +73,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="3dp">
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1">
 
                 <View
                     android:layout_width="120dp"
-                    android:layout_height="25dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:background="@drawable/white_bg"
                     android:layout_marginBottom="3dp"
@@ -85,8 +86,9 @@
 
                 <View
                     android:layout_width="75dp"
-                    android:layout_height="20dp"
+                    android:layout_height="25dp"
                     android:background="@drawable/grey_bg"
+                    android:layout_gravity="center"
                     />
             </LinearLayout>
 
@@ -94,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_alignParentEnd="true">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -105,7 +107,7 @@
 
                     <View
                         android:layout_width="110dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/white_bg"
                         android:layout_marginBottom="3dp"
@@ -113,16 +115,16 @@
 
                     <View
                         android:layout_width="75dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="end"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
                         android:background="@drawable/grey_bg"
                         />
                 </LinearLayout>
             </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -131,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_alignParentStart="true">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -142,7 +144,7 @@
 
                     <View
                         android:layout_width="130dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/white_bg"
                         android:layout_marginBottom="3dp"
@@ -150,8 +152,9 @@
 
                     <View
                         android:layout_width="75dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/grey_bg"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -160,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_alignParentEnd="true">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -171,7 +174,7 @@
 
                     <View
                         android:layout_width="120dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/white_bg"
                         android:layout_marginBottom="3dp"
@@ -179,16 +182,16 @@
 
                     <View
                         android:layout_width="75dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="end"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
                         android:background="@drawable/grey_bg"
                         />
                 </LinearLayout>
             </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -198,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_alignParentStart="true">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -208,7 +211,7 @@
 
                     <View
                         android:layout_width="105dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/white_bg"
                         android:layout_marginBottom="3dp"
@@ -216,8 +219,9 @@
 
                     <View
                         android:layout_width="75dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/grey_bg"
+                        android:layout_gravity="center"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -226,7 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_alignParentEnd="true">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -236,7 +240,7 @@
 
                     <View
                         android:layout_width="125dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/white_bg"
                         android:layout_marginBottom="3dp"
@@ -244,14 +248,14 @@
 
                     <View
                         android:layout_width="75dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="end"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
                         android:background="@drawable/grey_bg"
                         />
                 </LinearLayout>
             </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -268,7 +272,7 @@
 
                 <View
                     android:layout_width="205dp"
-                    android:layout_height="25dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:background="@drawable/white_bg"
                     android:layout_marginBottom="3dp"
@@ -276,7 +280,7 @@
 
                 <View
                     android:layout_width="75dp"
-                    android:layout_height="20dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:background="@drawable/grey_bg"
                     />
@@ -284,7 +288,7 @@
         </LinearLayout>
 
         <View
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="22dp"
             android:background="@drawable/accent_bg"
             android:layout_marginBottom="3dp"
@@ -294,7 +298,7 @@
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:background="@drawable/grey_bg"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             />
 
         <LinearLayout
@@ -305,11 +309,13 @@
             <View
                 android:layout_width="75dp"
                 android:layout_height="26dp"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/accent_bg"
                 />
             <View
                 android:layout_width="75dp"
                 android:layout_height="26dp"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/red_bg"
                 />
             <View

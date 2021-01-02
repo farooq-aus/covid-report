@@ -2,6 +2,7 @@ package com.example.coronareport;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -63,7 +64,7 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
         String displayDate = "";
         try {
             Date parsedDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(n.time);
-            displayDate = new SimpleDateFormat("HH:mm MMM dd, yyyy", Locale.getDefault()).format(parsedDate);
+            displayDate = new SimpleDateFormat("hh:mm aa MMM dd, yyyy", Locale.getDefault()).format(parsedDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }
