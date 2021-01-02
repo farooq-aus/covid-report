@@ -26,6 +26,23 @@ public class PreventionActivity extends AppCompatActivity {
         });
 
         ImageView google = findViewById(R.id.pgoogle);
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_SENDTO);
+//                intent.setData(Uri.parse("mail to:"));
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "COVID REPORT: <Add Subject Here>");
+//                intent.putExtra(Intent.EXTRA_TEXT, "Hey there wtfarooq!\n\n\n\n\nRegards,\n<Insert your name here>");
+//                if(intent.resolveActivity(getActivity().getPackageManager()) != null)
+//                    startActivity(intent);
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"developer@covidreport.com"});
+                email.putExtra(Intent.EXTRA_SUBJECT, "COVID REPORT: <Add Subject Here>");
+                email.setType("message/rfc822");
+
+                startActivity(Intent.createChooser(email, "Choose an Email client :"));
+            }
+        });
 
         ImageView github = findViewById(R.id.pgithub);
         github.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +61,12 @@ public class PreventionActivity extends AppCompatActivity {
         });
 
         ImageView facebook = findViewById(R.id.pfacebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/mirzamohdfarooq/")));
+            }
+        });
 
     }
 }
