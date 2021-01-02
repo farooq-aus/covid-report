@@ -4,7 +4,7 @@
   <img src="https://github.com/wtfarooq/covid-report/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON" width=150 height=150/>
 </p>
 
-![GitHub Downloads](https://img.shields.io/github/downloads/wtfarooq/covid-app/total?color=brightgreen)
+![GitHub all releases](https://img.shields.io/github/downloads/wtfarooq/covid-report/total)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wtfarooq/covid-report)
 ![GitHub top language](https://img.shields.io/github/languages/top/wtfarooq/covid-report)
 ![Lines of code](https://img.shields.io/tokei/lines/github/wtfarooq/covid-report)
