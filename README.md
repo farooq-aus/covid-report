@@ -27,7 +27,9 @@ COVID REPORT is a Java ☕ based Android 📱 app to fetch and display corona �
 
 ## Demo
 
-
+<!--
+  TODO: add Demo GIF
+-->
 
 ## Getting Started  📚
 
