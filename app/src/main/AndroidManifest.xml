@@ -15,8 +15,17 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PreventionActivity"
+            android:theme="@style/RoundCornerLightDialogTheme" />
+        <activity
+            android:name=".SymptomsActivity"
+            android:theme="@style/RoundCornerLightDialogTheme" />
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/RoundCornerLightDialogTheme" />
+        <activity
             android:name=".CountryActivity"
-            android:theme="@style/RoundCornerDialogTheme" />
+            android:theme="@style/RoundCornerDarkDialogTheme" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan">

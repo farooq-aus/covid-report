@@ -40,6 +40,62 @@
     <string name="symptoms_info">Signs and symptoms to identify infection</string>
     <string name="prevention_info">Take steps to reduce your risk of infection</string>
     <string name="copyright">Copyright © All Rights Reserved</string>
+    <string name="what_is_covid_19">What is COVID-19?\n</string>
+    <string name="about_para1">
+        Coronaviruses are a family of viruses that can cause illnesses such as common cold and severe respiratory problems.
+        In March 2020, the World Health Organization declared the COVID-19 outbreak a pandemic.
+    </string>
+    <string name="about_para2">
+        In 2019, a new coronavirus was identified as the cause of a disease outbreak that originated in China.
+        The virus is now known as the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
+        The disease it causes is called COVID-19.
+    </string>
+    <string name="what_are_covid_19_symptoms">What are the most common COVID-19 symptoms?\n</string>
+    <string name="symptoms_top_text">
+        Signs and symptoms of COVID-19 may appear 2 - 14 days after exposure.
+        This time between exposure and symptoms is called the incubation period.\n
+        Common signs and symptoms can include:\n</string>
+    <string name="symptoms_bottom_text">
+        \nThis does not mean that these are the only symptoms possible.
+        Other less common symptoms have been reported, such as rash, nausea, vomiting and diarrhea.
+        \nThe severity of COVID-19 symptoms can range from very mild to severe.
+        Some people may have only a few symptoms, and some people may have no symptoms at all.\n
+    </string>
+    <string name="how_can_you_prevent">How can you prevent yourself from the risk of infection?</string>
+    <string name="prevention_top_text">
+        Some countries have recieved their supplies of the Pfizer/BioNTech or Moderna COVID-19 vaccines.
+        However, to avoid getting COVID-19 in the first place, you can take additional steps to reduce your risk of infection.\n
+        WHO recommends the following precautions for avoiding exposure to COVID-19:\n"
+    </string>
+    <string name="safe_distance">
+        Keep distance between yourself and others, at least 2 meters (6 feet).
+        Some people may have COVID-19 and spread it to others, even if they don\'t have symptoms or don\'t know they have it.\n
+    </string>
+    <string name="maintain_a_safe_distance">Maintain a safe distance</string>
+    <string name="wash_your_hands">Wash your hands</string>
+    <string name="wash_hands">
+        Wash your hands often with soap and water for at least 20 seconds, or use an alcohol-based hand sanitizer that contains at least 60% alcohol.\n
+    </string>
+    <string name="wear_a_mask">Wear a mask</string>
+    <string name="wear_mask">
+        To minimize virus spread through air, cover your face with a cloth or surgical face mask in public spaces, where it\'s difficult to avoid close contact with others.\n
+    </string>
+    <string name="dont_touch_face">Don\'t touch your face</string>
+    <string name="use_tissue">
+        Avoid touching your eyes, nose and mouth.
+        You may use gloves or tissues instead.
+        Used tissues and gloves must be thrown away immediately after use.\n
+    </string>
+    <string name="stay_home_stay_safe">Stay home, stay safe</string>
+    <string name="stay_home">
+        Stay home from work, school and public areas if you\'re sick, unless you\'re going to get medical care.
+        Avoid public transportation, taxis and ride-sharing if you\'re sick.
+    </string>
+    <string name="fever">Fever</string>
+    <string name="cough">Cough</string>
+    <string name="loss_of_breath">Loss of breath</string>
+    <string name="sore_throat">Sore Throat</string>
+    <string name="dizziness">Dizziness</string>
     <string-array name="news_spinner_options">
         <item>USA</item>
         <item>India</item>

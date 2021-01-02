@@ -29,12 +29,10 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
     public static String GLOBAL_REQUEST_URL =
             "https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=false\n";
 
-    TextView worldCases,worldDeaths, countryName,cityName, countryCases,countryRecovered,countryCritical,countryDeaths;
-    ImageView countryFlag;
+    private TextView worldCases,worldDeaths, countryName,cityName, countryCases,countryRecovered,countryCritical,countryDeaths;
+    private ImageView countryFlag;
 
-    LinearLayout globalLayout, countryLayout;
-
-    private Spinner spinner;
+    private LinearLayout globalLayout, countryLayout, aboutLayout,symptomsLayout,preventionLayout;
 
     private ShimmerFrameLayout shimmerFrameLayout;
 
@@ -46,6 +44,9 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
 
         globalLayout = rootView.findViewById(R.id.global_box);
         countryLayout = rootView.findViewById(R.id.gcountry_box);
+        aboutLayout = rootView.findViewById(R.id.about_box);
+        symptomsLayout = rootView.findViewById(R.id.symptoms_box);
+        preventionLayout = rootView.findViewById(R.id.prevention_box);
 
         shimmerFrameLayout = rootView.findViewById(R.id.global_shimmer);
         globalLayout.setVisibility(View.GONE);
@@ -66,6 +67,27 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
 
         android.app.LoaderManager loaderManager = getActivity().getLoaderManager();
         loaderManager.initLoader(GLOBAL_LOADER_ID, null, this);
+
+        aboutLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), AboutActivity.class));
+            }
+        });
+
+        symptomsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), SymptomsActivity.class));
+            }
+        });
+
+        preventionLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), PreventionActivity.class));
+            }
+        });
 
         return rootView;
     }

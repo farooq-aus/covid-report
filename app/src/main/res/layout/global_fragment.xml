@@ -22,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarFadeDuration="100"
-        android:scrollbarThumbVertical="@drawable/accent_bg">
+        android:scrollbarThumbVertical="@drawable/accent_bg"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -420,6 +421,7 @@
                                 android:layout_height="wrap_content" />
 
                             <LinearLayout
+                                android:id="@+id/about_box"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:layout_marginHorizontal="6dp"
@@ -451,6 +453,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/symptoms_box"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:layout_marginHorizontal="6dp"
@@ -482,6 +485,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/prevention_box"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:layout_marginStart="6dp"
@@ -520,8 +524,9 @@
                 </LinearLayout>
 
                 <View
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="1dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="32dp"
                     android:background="@color/colorAccent" />
 
@@ -569,7 +574,7 @@
                     android:layout_marginBottom="60dp"
                     android:text="@string/copyright"
                     android:textColor="@color/colorAccent"
-                    android:textSize="6sp" />
+                    android:textSize="8sp" />
 
             </LinearLayout>
         </LinearLayout>
