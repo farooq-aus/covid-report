@@ -42,13 +42,13 @@
     <string name="copyright">Copyright © All Rights Reserved</string>
     <string name="what_is_covid_19">What is COVID-19?\n</string>
     <string name="about_para1">
-        Coronaviruses are a family of viruses that can cause illnesses such as common cold and severe respiratory problems.
-        In March 2020, the World Health Organization declared the COVID-19 outbreak a pandemic.
+        Coronaviruses are a family of viruses that can cause illnesses such as common cold and severe respiratory problems.\n
     </string>
     <string name="about_para2">
         In 2019, a new coronavirus was identified as the cause of a disease outbreak that originated in China.
         The virus is now known as the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
-        The disease it causes is called COVID-19.
+        The disease it causes is called COVID-19.\n\n
+        In March 2020, the World Health Organization declared the COVID-19 outbreak a pandemic.\n
     </string>
     <string name="what_are_covid_19_symptoms">What are the most common COVID-19 symptoms?\n</string>
     <string name="symptoms_top_text">

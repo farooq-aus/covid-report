@@ -72,8 +72,6 @@ public class CountryActivity extends AppCompatActivity implements LoaderManager.
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(25);
                 finish();
             }
         });

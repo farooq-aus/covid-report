@@ -97,6 +97,7 @@
             android:paddingVertical="30dp">
 
             <ImageView
+                android:id="@+id/agoogle"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_margin="16dp"
@@ -104,6 +105,7 @@
                 app:tint="@color/colorAccent" />
 
             <ImageView
+                android:id="@+id/agithub"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_margin="16dp"
@@ -111,6 +113,7 @@
                 app:tint="@color/colorAccent" />
 
             <ImageView
+                android:id="@+id/ainstagram"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_margin="16dp"
@@ -118,6 +121,7 @@
                 app:tint="@color/colorAccent" />
 
             <ImageView
+                android:id="@+id/afacebook"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_margin="16dp"

@@ -7,6 +7,7 @@ import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.squareup.picasso.Picasso;
@@ -30,7 +32,7 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
             "https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=false\n";
 
     private TextView worldCases,worldDeaths, countryName,cityName, countryCases,countryRecovered,countryCritical,countryDeaths;
-    private ImageView countryFlag;
+    private ImageView countryFlag, google,github,instagram,facebook;
 
     private LinearLayout globalLayout, countryLayout, aboutLayout,symptomsLayout,preventionLayout;
 
@@ -65,6 +67,11 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
 
         countryFlag = rootView.findViewById(R.id.gflag);
 
+        google = rootView.findViewById(R.id.ggoogle);
+        github = rootView.findViewById(R.id.ggithub);
+        instagram = rootView.findViewById(R.id.ginstagram);
+        facebook = rootView.findViewById(R.id.gfacebook);
+
         android.app.LoaderManager loaderManager = getActivity().getLoaderManager();
         loaderManager.initLoader(GLOBAL_LOADER_ID, null, this);
 
@@ -86,6 +93,20 @@ public class GlobalFragment extends Fragment implements LoaderManager.LoaderCall
             @Override
             public void onClick(View v) {
                 getActivity().startActivity(new Intent(getActivity(), PreventionActivity.class));
+            }
+        });
+
+        github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.github.com/wtfarooq/")));
+            }
+        });
+
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/wtfarooq/")));
             }
         });
 
