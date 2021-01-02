@@ -145,8 +145,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/accent_bg"
-                android:orientation="vertical"
-                android:padding="8dp"/>
+                android:orientation="vertical"/>
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -155,8 +154,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/blue_bg"
-                android:orientation="vertical"
-                android:padding="8dp"/>
+                android:orientation="vertical"/>
         </LinearLayout>
 
         <LinearLayout
@@ -171,8 +169,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/red_bg"
-                android:orientation="vertical"
-                android:padding="8dp"/>
+                android:orientation="vertical"/>
 
             <LinearLayout
                 android:layout_width="100dp"
@@ -181,9 +178,15 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/grey_bg"
-                android:orientation="vertical"
-                android:padding="8dp"/>
+                android:orientation="vertical"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="end"
+            android:background="@drawable/grey_bg"
+            />
 
     </LinearLayout>
 

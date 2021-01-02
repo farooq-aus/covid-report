@@ -5,7 +5,7 @@
     android:background="@drawable/item_background"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_marginBottom="20dp">
+    android:layout_marginBottom="16dp">
 
     <View
         android:id="@+id/ejnsw"
@@ -32,7 +32,7 @@
 
             <View
                 android:layout_width="56dp"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:background="@drawable/white_bg"
                 android:layout_marginBottom="3dp"
@@ -40,7 +40,7 @@
 
             <View
                 android:layout_width="85dp"
-                android:layout_height="28dp"
+                android:layout_height="26dp"
                 android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
@@ -56,7 +56,7 @@
 
             <View
                 android:layout_width="72dp"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:background="@drawable/white_bg"
                 android:layout_gravity="center"
                 android:layout_marginBottom="3dp"
@@ -64,7 +64,7 @@
 
             <View
                 android:layout_width="65dp"
-                android:layout_height="28dp"
+                android:layout_height="26dp"
                 android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
@@ -80,7 +80,7 @@
 
             <View
                 android:layout_width="120dp"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:background="@drawable/white_bg"
                 android:layout_gravity="center"
                 android:layout_marginBottom="3dp"
@@ -88,7 +88,7 @@
 
             <View
                 android:layout_width="85dp"
-                android:layout_height="28dp"
+                android:layout_height="26dp"
                 android:layout_gravity="center"
                 android:background="@drawable/grey_bg"
                 />
@@ -97,7 +97,7 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginTop="3dp"
-                android:background="@drawable/white_bg"
+                android:background="@drawable/grey_bg"
                 android:layout_gravity="end" />
 
         </LinearLayout>

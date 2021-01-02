@@ -120,6 +120,6 @@
         android:layout_height="16dp"
         android:layout_gravity="end"
         android:src="@drawable/open_link"
-        app:tint="@color/colorDefaultText" />
+        app:tint="@color/colorSecondaryText" />
 
 </LinearLayout>

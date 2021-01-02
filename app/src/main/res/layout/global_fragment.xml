@@ -364,7 +364,7 @@
                         android:layout_height="16dp"
                         android:layout_gravity="end"
                         android:src="@drawable/open_link"
-                        app:tint="@color/colorDefaultText" />
+                        app:tint="@color/colorSecondaryText" />
 
                 </LinearLayout>
 
@@ -423,7 +423,6 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:layout_marginHorizontal="6dp"
-                                android:layout_marginVertical="3dp"
                                 android:background="@drawable/white_bg"
                                 android:orientation="vertical"
                                 android:padding="8dp">
@@ -567,10 +566,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="60dp"
                     android:text="@string/copyright"
                     android:textColor="@color/colorAccent"
-                    android:textSize="12sp" />
+                    android:textSize="6sp" />
 
             </LinearLayout>
         </LinearLayout>
