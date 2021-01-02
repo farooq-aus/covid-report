@@ -439,77 +439,85 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:scrollbarFadeDuration="100"
+                        android:scrollbarThumbHorizontal="@drawable/accent_bg">
 
                         <LinearLayout
-                            android:id="@+id/symptoms_box"
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginVertical="6dp"
-                            android:layout_marginEnd="12dp"
-                            android:background="@drawable/white_bg"
-                            android:orientation="vertical"
-                            android:padding="8dp">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="72dp"
-                                android:layout_height="72dp"
-                                android:layout_margin="3dp"
-                                android:src="@drawable/symptoms_info_icon" />
+                            <LinearLayout
+                                android:id="@+id/symptoms_box"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginVertical="6dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/white_bg"
+                                android:orientation="vertical"
+                                android:padding="8dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/symptoms"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                                <ImageView
+                                    android:layout_width="72dp"
+                                    android:layout_height="72dp"
+                                    android:layout_margin="3dp"
+                                    android:src="@drawable/symptoms_info_icon" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/symptoms_info"
-                                android:textColor="@color/colorSecondaryText"
-                                android:textSize="12sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/symptoms"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/symptoms_info"
+                                    android:textColor="@color/colorSecondaryText"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/prevention_box"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginVertical="6dp"
+                                android:background="@drawable/white_bg"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="72dp"
+                                    android:layout_height="72dp"
+                                    android:layout_margin="3dp"
+                                    android:src="@drawable/prevention_info_icon" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/prevention"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/prevention_info"
+                                    android:textColor="@color/colorSecondaryText"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/prevention_box"
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginVertical="6dp"
-                            android:background="@drawable/white_bg"
-                            android:orientation="vertical"
-                            android:padding="8dp">
-
-                            <ImageView
-                                android:layout_width="72dp"
-                                android:layout_height="72dp"
-                                android:layout_margin="3dp"
-                                android:src="@drawable/prevention_info_icon" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/prevention"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/prevention_info"
-                                android:textColor="@color/colorSecondaryText"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
+                    </HorizontalScrollView>
 
                 </LinearLayout>
 
