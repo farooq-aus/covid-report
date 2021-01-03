@@ -25,11 +25,11 @@ COVID REPORT is a Java ☕ based Android 📱 app to fetch and display corona �
 * Search by country name 🔍
 * Read news tailored for 6 countries - USA, UK, Australia, India, Russia and France 📰
 
-## Demo
+## Demo ▶
 
-<!--
-  TODO: add Demo GIF
--->
+<p align=center>
+  <img src="https://github.com/wtfarooq/covid-report/blob/master/screenshots/demo.gif?raw=true" alt = "COVID REPORT ICON"/>
+</p>
 
 ## Getting Started  📚
 
