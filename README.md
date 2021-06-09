@@ -1,16 +1,16 @@
 
-![COVID REPORT](https://github.com/farooq_aus/covid-report/blob/master/screenshots/COVID%20REPORT.png)
+![COVID REPORT](https://github.com/farooq-aus/covid-report/blob/master/screenshots/COVID%20REPORT.png)
 <p align=center>
-  <img src="https://github.com/farooq_aus/covid-report/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON" width=150 height=150/>
+  <img src="https://github.com/farooq-aus/covid-report/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true" alt = "COVID REPORT ICON" width=150 height=150/>
 </p>
 
-![GitHub all releases](https://img.shields.io/github/downloads/farooq_aus/covid-report/total)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/farooq_aus/covid-report)
-![GitHub top language](https://img.shields.io/github/languages/top/farooq_aus/covid-report)
-![Lines of code](https://img.shields.io/tokei/lines/github/farooq_aus/covid-report)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/farooq_aus/covid-report/master)
-![GitHub forks](https://img.shields.io/github/forks/farooq_aus/covid-report?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/farooq_aus/covid-report?style=social)
+![GitHub all releases](https://img.shields.io/github/downloads/farooq-aus/covid-report/total)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/farooq-aus/covid-report)
+![GitHub top language](https://img.shields.io/github/languages/top/farooq-aus/covid-report)
+![Lines of code](https://img.shields.io/tokei/lines/github/farooq-aus/covid-report)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/farooq-aus/covid-report/master)
+![GitHub forks](https://img.shields.io/github/forks/farooq-aus/covid-report?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/farooq-aus/covid-report?style=social)
 
 ## About
 
@@ -28,7 +28,7 @@ COVID REPORT is a Java ☕ based Android 📱 app to fetch and display corona �
 ## Demo ▶
 
 <p align=center>
-  <img src="https://github.com/farooq_aus/covid-report/blob/master/screenshots/demo.gif?raw=true" alt = "COVID REPORT ICON"/>
+  <img src="https://github.com/farooq-aus/covid-report/blob/master/screenshots/demo.gif?raw=true" alt = "COVID REPORT ICON"/>
 </p>
 
 ## Getting Started  📚
